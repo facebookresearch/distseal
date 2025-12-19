@@ -186,7 +186,7 @@ print(f"Average bit accuracy: {bit_acc * 100:.2f}%")
 ```
 
 # 🚀 Usage: post-hoc latent watermarking
-We also provide notebooks for RAR (`notebooks/posthoc_rar.ipynb`) and DCAE (`notebooks/posthoc_dcae.ipynb`) illustrating post-hoc latent watermarking on an example image. The latent encoder first encodes the loaded image into latents which are watermarked by the post-hoc latent watermarker. We visualize the watermarked image by decoding the watermarked latents back to the pixel space, and then detect the watermark from the final image.
+We also provide notebooks for RAR ([`notebooks/posthoc_rar.ipynb`](./notebooks/posthoc_rar.ipynb)) and DCAE ([`notebooks/posthoc_dcae.ipynb`](./notebooks/posthoc_dcae.ipynb)) illustrating post-hoc latent watermarking on an example image. The latent encoder first encodes the loaded image into latents which are watermarked by the post-hoc latent watermarker. We visualize the watermarked image by decoding the watermarked latents back to the pixel space, and then detect the watermark from the final image.
 
 
 
@@ -359,7 +359,7 @@ If you find this work useful, please consider giving the repo a star ⭐ :) and 
 
 # 📃 License
 
-The model is licensed under an [MIT license](LICENSE).
+The model and code are licensed under [MIT license](LICENSE).
 
 # Contributing
 
