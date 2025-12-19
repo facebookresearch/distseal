@@ -1,0 +1,27 @@
+model_arch: uvit
+resolution: 512
+spatial_compression_ratio: 64
+checkpoint: https://dl.fbaipublicfiles.com/distseal/uvit-h-in-512px-train2000k.pt
+# checkpoint: /checkpoint/avseal/models/distseal/dcae/uvit-h-in-512px-train2000k.pt
+
+model:
+    name: UViT
+    input_size: 32
+    patch_size: 1
+    in_channels: 128
+    hidden_size: 1152
+    depth: 28
+    num_heads: 16
+    mlp_ratio: 4.0
+    mlp_time_embed: False
+    qkv_bias: False
+    act_layer: gelu
+    use_checkpoint: True
+    class_dropout_prob: 0.1
+    num_classes: 1000
+    pretrained_path: null
+    pretrained_source: dc-ae
+    eval_scheduler: DPM_Solver
+    num_inference_steps: 30
+    train_scheduler: DPM_Solver
+    attn_mode: null

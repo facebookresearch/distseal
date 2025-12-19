@@ -1,0 +1,54 @@
+#========================================================================================
+# Mandatory parameters. Must be specified in command line or script
+run_dir: ""  # Output to store checkpoints, intermediate results (images), and logs
+imagenet:
+    data_dir: ""  # Path to ImageNet data. The directory should contain 'train' and 'val' subfolders.
+    batch_size: 16
+
+
+
+
+
+#========================================================================================
+# Model-specific parameters. Modify these values for different experiments
+model: dc-ae-f64c128-in-1.0
+
+# watermarker
+watermarker_ckpt_path: ""  # Path to post-hoc latent watermarker checkpoint
+watermarker_scaling_w: 0.5
+
+# loss
+extractor_weight: 0.1
+perceptual_weight: 0.0
+
+# dataset
+train_dataset: imagenet
+resolution: 512
+
+
+
+
+#========================================================================================
+# Default values + shared values across experiments
+
+# loss
+reconstruction_weight_ori: 0.0
+reconstruction_weight_wm: 1.0
+
+# training
+use_eval_mode_in_train: False
+clip_grad: 1
+num_batches: 125
+compute_fid: False
+log: True
+evaluate_steps: 500
+max_steps: 10000
+amp: bf16
+lr_scheduler:
+    name: cosine_annealing_with_rampup
+    warmup_steps: 1000
+optimizer:
+    betas: [0.9,0.999]
+    lr: 0.0001
+    name: adamw
+

@@ -1,0 +1,14 @@
+torch>=2.3.1
+pandas
+opencv-python
+numpy
+omegaconf
+einops
+lpips
+timm
+scipy
+pytorch_msssim
+tensorboard
+onnx
+onnxsim
+onnxruntime

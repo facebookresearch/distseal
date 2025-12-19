@@ -1,0 +1,3 @@
+checkpoint: https://dl.fbaipublicfiles.com/distseal/detector_maskgit_wm_postquant.pt
+message: https://dl.fbaipublicfiles.com/distseal/detector_maskgit_wm_postquant_msg.npy
+scaling_w: 0.5

@@ -1,0 +1,3 @@
+model_arch: dc-ae
+base: dc-ae-f64c128-in-1.0
+checkpoint: https://dl.fbaipublicfiles.com/distseal/dcae_wm__extractor_weight-0.1_perceptual_weight-0.0.pt

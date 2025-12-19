@@ -1,0 +1,64 @@
+HorizontalFlip:
+  func: omnisealbench.attacks.geometric.HorizontalFlip
+
+Rotate:
+  func: omnisealbench.attacks.geometric.Rotate
+  args:
+    angle: [5, 10, 30, 45, 90]
+
+Resize:
+  func: omnisealbench.attacks.geometric.Resize
+  args:
+    size: [0.32, 0.45, 0.55, 0.63, 0.71, 0.77, 0.84, 0.89, 0.95, 1.00]
+
+Crop:
+  func: omnisealbench.attacks.geometric.Crop
+  args:
+    size: [0.32, 0.45, 0.55, 0.63, 0.71, 0.77, 0.84, 0.89, 0.95, 1.00]
+
+Perspective:
+  func: omnisealbench.attacks.geometric.Perspective
+  args:
+    distortion_scale: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8]
+
+Brightness:
+  func: omnisealbench.attacks.valuemetric.Brightness
+  args:
+    factor: [0.1, 0.25, 0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0]
+
+Contrast:
+  func: omnisealbench.attacks.valuemetric.Contrast
+  args:
+    factor: [0.1, 0.25, 0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0]
+
+Saturation:
+  func: omnisealbench.attacks.valuemetric.Saturation
+  args:
+    factor: [0.1, 0.25, 0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0]
+
+Grayscale:
+  func: omnisealbench.attacks.valuemetric.Grayscale
+
+Hue:
+  func: omnisealbench.attacks.valuemetric.Hue
+  args:
+    factor: [-0.4, -0.3, -0.2, -0.1, 0.0, 0.1, 0.2, 0.3, 0.4, 0.5]
+
+JPEG:
+  func: omnisealbench.attacks.valuemetric.JPEG
+  args:
+    quality: [40, 50, 60, 70, 80, 90]
+
+GaussianBlur:
+  func: omnisealbench.attacks.valuemetric.GaussianBlur
+  args:
+    kernel_size: [3, 5, 9, 13, 17]
+
+JPEG_Crop_Brightness:
+  func: omnisealbench.attacks.mixed_video.JPEG_Crop_Brightness
+  category: geometric
+  args:
+    xargs:
+      - [40, 0.71, 0.5]
+      - [60, 0.71, 0.5]
+      - [80, 0.71, 0.5]

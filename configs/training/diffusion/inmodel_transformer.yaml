@@ -1,0 +1,65 @@
+#========================================================================================
+# Mandatory parameters. Must be specified in command line or script
+run_dir: ""  # Output to store checkpoints, intermediate results (images), and logs
+latent_imagenet:
+    data_dir: ""  # Path to latent ImageNet data. The directory should contain 'train' and 'val' subfolders.
+    batch_size: 128
+
+
+
+#========================================================================================
+# Model-specific parameters. Modify these values for different experiments
+model: uvit
+autoencoder: dc-ae-f64c128-in-1.0
+resume_path: "dc-ae-f64c128-in-1.0-uvit-h-in-512px-train2000k"  # Path to pretrained diffusion model checkpoint
+
+scaling_factor: 0.2889
+
+# watermarker
+watermark_scaling_w: 0.5
+watermark_ckpt_path: "" # Path to post-hoc latent watermarker checkpoint
+watermark_msg_path: ""  # Path to watermark message file
+
+# dataset
+train_dataset: latent_imagenet
+resolution: 512
+
+# loss
+reference_model_weight: 0.0
+
+
+
+
+
+#========================================================================================
+# Default values + shared values across experiments
+uvit:
+    eval_scheduler: DPM_Solver
+    train_scheduler: DPM_Solver
+    patch_size: 1
+    in_channels: 128
+    num_heads: 16
+    hidden_size: 1152
+    depth: 28
+
+# training
+resume_schedule: False
+resume: True
+log: True
+compute_fid: False
+evaluate_steps: 5000
+max_steps: 100000
+ema_decay: 0.9999
+amp: bf16
+lr_scheduler:
+    name: constant
+optimizer:
+    betas: [0.99,0.99]
+    weight_decay: 0.03
+    lr: 0.0002
+    name: adamw
+
+sample_class:
+    num_samples: 50000
+evaluate_dataset: sample_class
+

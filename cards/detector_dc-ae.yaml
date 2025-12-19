@@ -1,0 +1,4 @@
+checkpoint: https://dl.fbaipublicfiles.com/distseal/detector_dcae_diffusion.pt
+message: https://dl.fbaipublicfiles.com/distseal/detector_dcae_diffusion_msg.npy
+scaling_w: 0.5
+

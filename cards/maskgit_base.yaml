@@ -1,0 +1,2 @@
+model_arch: maskgit
+checkpoint: https://huggingface.co/fun-research/TiTok/resolve/main/maskgit-vqgan-imagenet-f16-256.bin

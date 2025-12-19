@@ -1,0 +1,5 @@
+model_arch: rar
+size: rar_xl
+
+# For pretrained RAR, we load from HF
+checkpoint: https://huggingface.co/yucornetto/RAR/resolve/main/rar_xl.bin

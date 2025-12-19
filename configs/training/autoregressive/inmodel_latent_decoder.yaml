@@ -1,0 +1,56 @@
+#========================================================================================
+# Mandatory parameters. Must be specified in command line or script
+run_dir: ""
+
+# Dataset
+imagenet:
+    data_dir: /path/to/imagenet/train/split
+    batch_size: 16
+
+
+
+
+
+#========================================================================================
+# Model-specific parameters. Modify these values for different experiments
+model: maskgit-vqgan
+latent_layer: input_after_quantize
+
+# watermarker
+watermarker_ckpt_path: ""
+watermarker_scaling_w: 0.5
+
+# loss
+extractor_weight: 0.5
+perceptual_weight: 1.0
+
+# dataloading
+resolution: 256
+
+
+
+
+#========================================================================================
+# Default values + shared values across experiments
+train_dataset: imagenet
+
+# loss
+reconstruction_weight_ori: 0.0
+reconstruction_weight_wm: 1.0
+
+# training
+use_eval_mode_in_train: False
+clip_grad: 1
+num_batches: 125
+compute_fid: False
+log: True
+evaluate_steps: 500
+max_steps: 10000
+amp: bf16
+lr_scheduler:
+    name: cosine_annealing_with_rampup
+    warmup_steps: 1000
+optimizer:
+    betas: [0.9, 0.999]
+    lr: 0.0001
+    name: adamw

@@ -1,0 +1,122 @@
+model: convnext_tiny
+
+hidden:
+  num_blocks: 8
+  num_bits: 16
+  in_channels: 3
+  z_channels: 64
+  normalization: 'group'
+  activation: 'gelu'
+
+hidden_orig:
+  num_blocks: 8
+  num_bits: 16
+  in_channels: 3
+  z_channels: 64
+  normalization: 'batch'
+  activation: 'relu'
+
+sam_small:
+  encoder:
+    img_size: 256
+    embed_dim: 384
+    out_chans: 384
+    depth: 12
+    num_heads: 6
+    patch_size: 16
+    global_attn_indexes: [2, 5, 8, 11]
+    window_size: 8
+    mlp_ratio: 4
+    qkv_bias: True
+    use_rel_pos: True
+  pixel_decoder:
+    pixelwise: False  # return msg per pixel (k h w)
+    upscale_stages: [1]  # 4*2*2 = x16 (patch size)
+    embed_dim: 384  # = encoder.out_chans
+    nbits: 16
+    sigmoid_output: False
+    upscale_type: 'bilinear'  # 'pixelshuffle', 'nearest', 'conv',  'bilinear'
+
+sam_small_pw:
+  encoder:
+    img_size: 256
+    embed_dim: 384
+    out_chans: 384
+    depth: 12
+    num_heads: 6
+    patch_size: 16
+    global_attn_indexes: [2, 5, 8, 11]
+    window_size: 8
+    mlp_ratio: 4
+    qkv_bias: True
+    use_rel_pos: True
+  pixel_decoder:
+    pixelwise: True  # return msg per pixel (k h w)
+    upscale_stages: [4, 2, 2]  # 4*2*2 = x16 (patch size)
+    embed_dim: 384  # = encoder.out_chans
+    nbits: 16
+    sigmoid_output: False
+    upscale_type: 'bilinear'  # 'pixelshuffle', 'nearest', 'conv',  'bilinear'
+
+convnext_tiny:
+  encoder:
+    depths: [3, 3, 9, 3]
+    dims: [96, 192, 384, 768]
+  pixel_decoder:
+    pixelwise: False  # return msg per pixel (k h w)
+    upscale_stages: [1]
+    embed_dim: 768  # = encoder.out_chans
+    nbits: 16
+    sigmoid_output: False
+
+convnext_tiny_pw:
+  encoder:
+    depths: [3, 3, 9, 3]
+    dims: [96, 192, 384, 768]
+  pixel_decoder:
+    upscale_stages: [4, 4, 2]  # 4*2*2 = x16 (patch size)
+    embed_dim: 768  # = encoder.out_chans
+    nbits: 16
+    sigmoid_output: False
+    pixelwise: True
+
+convnext_base_pw:
+  encoder:
+    depths: [3, 3, 27, 3]
+    dims: [128, 256, 512, 1024]
+  pixel_decoder:
+    upscale_stages: [4, 4, 2]  # 4*2*2 = x16 (patch size)
+    embed_dim: 1024  # = encoder.out_chans
+    nbits: 16
+    sigmoid_output: False
+    pixelwise: True
+
+efficientvit_b1:
+  encoder:
+    name: 'b1'
+    higher_res: False
+
+efficientvit_b1_higher_res:
+  encoder:
+    name: 'b1'
+    higher_res: True
+
+efficientvit_l0:
+  encoder:
+    name: 'l0'
+    with_att: False
+
+efficientvit_l0_with_att:
+  encoder:
+    name: 'l0'
+    with_att: True
+
+efficientvit_l1:
+  encoder:
+    name: 'l1'
+    with_att: False
+
+efficientvit_l1_with_att:
+  encoder:
+    name: 'l1'
+    with_att: True

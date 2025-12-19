@@ -1,0 +1,6 @@
+model_arch: rar
+size: rar_xl
+
+# For pretrained RAR, we load from HF
+checkpoint: https://dl.fbaipublicfiles.com/distseal/rar_xl_wm__w1.5.pt
+# checkpoint: /checkpoint/avseal/tuantran/experiments/latent/1018_rar_xl_ft-0919_maskgit_imagenet_w1.5/expe/pytorch_model.bin

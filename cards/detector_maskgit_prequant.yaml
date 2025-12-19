@@ -1,0 +1,3 @@
+checkpoint: https://dl.fbaipublicfiles.com/distseal/detector_maskgit_wm_prequant.pt
+message: https://dl.fbaipublicfiles.com/distseal/detector_maskgit_wm_prequant_msg.npy
+scaling_w: 1.5

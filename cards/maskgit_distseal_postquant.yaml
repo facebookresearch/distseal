@@ -1,0 +1,2 @@
+model_arch: maskgit
+checkpoint: https://dl.fbaipublicfiles.com/distseal/maskgit_wm_postquant__extractor_weight-0.5_perceptual_weight-1.0.pt
