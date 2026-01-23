@@ -9,7 +9,7 @@ Official implementation of DistSeal, a unified framework for latent watermarking
 <br><br>
 
 [ [Colab](https://colab.research.google.com/github/facebookresearch/distseal/blob/main/notebooks/colab.ipynb) ]
-[ [Paper](https://scontent-sjc3-1.xx.fbcdn.net/v/t39.2365-6/603028033_905511885552755_4967480041688018421_n.pdf?_nc_cat=110&ccb=1-7&_nc_sid=3c67a6&_nc_ohc=J19JF6eIvJwQ7kNvwGOlV-n&_nc_oc=AdkofKPvU4h-p-wqZYs65ShxPFF29k7MXqy57K2n2_2hu1moVwrOeypVGF3qS-8DDIY4z4NzWznVWs3rGsJwG9ic&_nc_zt=14&_nc_ht=scontent-sjc3-1.xx&_nc_gid=yFl4l1JLtHBm5d8lB2Q-5w&oh=00_AfkB4IWAKQj2TCSBBOb8xQdHH3Dzgr8Wx7ajlYn68poP_g&oe=694AAF2D) ]
+[ [Arxiv](https://arxiv.org/abs/2601.16140) ]
 [ [Blog](https://ai.meta.com/research/publications/distilling-latent-space-watermarkers-into-generative-image-models/) ]
 [ [Meta Seal](https://facebookresearch.github.io/meta-seal/) ]
 </div>
